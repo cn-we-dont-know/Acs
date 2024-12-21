@@ -1,0 +1,32 @@
+File Upload Vulnerabilities: 
+
+select upload
+Attempting a Malicious PHP File Upload:
+
+o Create a simple PHP file that outputs “Hello” to test if server-side scripting can be 
+
+executed:
+
+php
+
+<?php echo "Hello from your PHP file!"; ?>
+
+o Save this file as test.php
+
+
+
+Upload the Malicious PHP File:
+
+o Attempt to upload test.php in the File Upload module.
+
+o Expected Result: At the Low security level, DVWA may accept the PHP file and 
+
+provide a link to access it.
+
+4. Access the Uploaded PHP File:
+
+o Click on the link or navigate to the file path displayed after upload (e.g., 
+
+http://metasploitable_IP/dvwa/hackable/uploads/test.php).
+
+
