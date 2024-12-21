@@ -1,0 +1,47 @@
+Experiment 5:
+
+Man-in-the-Middle (MITM) Attack
+
+Ensure Wireshark is installed on the Kali machine.
+Ensure ettercap is installed on kali machine
+
+On windows machine: give ipconfig and check the ip and gateway address
+In attacker machine ( Kali Linux) , give ifconfig and check the ip address
+
+1. Open ettercap tool in kali linux. In setup, start sniffing and click the tick mark.
+2. Scan for hosts and click on host list to see the hosts in the network
+3. Identify the target and the gateway ip to perform MITM attack OR You can also 
+perform MITM attack for all hosts.
+For all hosts, default attack, select MITM and then select ARP poisoning
+
+For all hosts, default attack, select MITM and then select ARP poisoning 
+Then, select sniff remote connections and click OK
+4. Now in the victim or target host, Open vulnerable web 
+5. Ettercap intercepts the traffic and will capture all the network traffic which come 
+from target device to gateway. The below output shows how ettercap captures 
+traffic.
+
+
+MANUAL ATTACK:
+Step 1: Open three terminals and login to super user in all three terminals
+
+echo "1" > /proc/sys/net/ipv4/ip_forward
+cat /proc/sys/net/ipv4/ip_forward
+iptables -t nat -A PREROUTING -p tcp --destination-port 80 -j REDIRECT --to-port 10000
+
+in 2nd terminal
+type
+arpspoof -t [Victim_IP] [Gateway_IP]
+
+in 3rd terminal
+type
+arpspoof -t [Gateway_IP] [Victim_IP]
+
+open wireshark and start capturing packets and after give enter in 2 terminals command untill dont give press enter
+
+Step 6: Now open web browser in target or victim host and open any vulnerable website altoro mutual
+and login with username and password to the portal
+
+Step 7: In attacker host ( kali Linux) , stop capture and serach for POST HTTP header 
+packet.
+Step 8: Open the post header and observe whether the login credentials are captured
