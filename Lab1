@@ -1,0 +1,2 @@
+echo -n "abc" |md5sum| tr -d ' -' > a.txt
+hashcat -m 0 
