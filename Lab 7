@@ -1,0 +1,10 @@
+experiment 7
+burpsuite
+
+2. Set DVWA Security Level:
+Go to DVWA Security and set the level to Low.
+
+3. Set Up Burp Suite:
+Configure the browser to use Burp Suite as a proxy (default: 127.0.0.1:8080).
+Open Burp Suite and ensure Intercept is enabled.
+
