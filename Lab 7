@@ -8,3 +8,13 @@ Go to DVWA Security and set the level to Low.
 Configure the browser to use Burp Suite as a proxy (default: 127.0.0.1:8080).
 Open Burp Suite and ensure Intercept is enabled.
 
+go to dvwa brute force put username and password 
+burp suite forward
+action, sen to intruder , intruder position clear $,
+select attack type cluster bomb, select usernam add,selcte password add
+payload set 1 type simple add more usernames click add
+set 2 password list click add
+select incorrect password copy it
+options grep match paste it click add start attack ok
+
+
