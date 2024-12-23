@@ -1,2 +1,10 @@
 echo -n "abc" |md5sum| tr -d ' -' > a.txt
-hashcat -m 0 
+hashcat -m 0 -a 0 -o p.txt a.txt usr/share/wordlists/rockyou.txt
+
+echo -n "hello" | sha256sum | tr –d ' –' > hashes.txt
+hashcat -m 1400 -a 3 -o cracked_passwords.txt hashes.txt ?a?a?a?a?a
+
+
+
+hashcat -m 0 -a 0 -r /usr/share/hashcat/rules/best64.rule -o cracked_passwords.txt 
+hashes.txt /usr/share/wordlists/rockyou.txt
